@@ -1,1 +1,2 @@
+betterproto[compiler]
 protobuf==3.17.3
