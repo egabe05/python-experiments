@@ -1,4 +1,4 @@
-import addressbook_pb2
+from protobuf2 import addressbook_pb2
 
 def ListPeople(address_book):
     for person in address_book.people:

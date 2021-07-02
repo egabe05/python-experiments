@@ -1,4 +1,4 @@
-import addressbook_pb2
+from protobuf2 import addressbook_pb2
 
 def PromptForAddress(person):
     person.id = int(input("Enter person ID number: "))
