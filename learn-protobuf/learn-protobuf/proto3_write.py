@@ -1,4 +1,4 @@
-import addressbook3_pb2
+from protobuf3 import addressbook3_pb2
 
 def PromptForAddress(person):
     person.id = int(input("Enter person ID number: "))
@@ -25,7 +25,6 @@ def PromptForAddress(person):
             phone.type = addressbook3_pb2.Person.PhoneType.WORK
         else:
             print("Unknown phone type; leaving as default value.")
-    print(person)
 
 if __name__ == "__main__":
     import sys
