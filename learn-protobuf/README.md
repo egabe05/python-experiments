@@ -71,6 +71,14 @@ If you are paying attention to the generated protocol API file you might notice 
 ## Typed serialized data through the protocol API.
 If you serialized your data with both the Google default python compiler and the betterproto compiler you will have 2 unique serialized files, `serialized/proto3_addressbook` and `serialized/better_addressbook`.  To prove that the serialized data can be read between the two you can run the respective read file against the serialized data that was built with the others API.
 
+```bash
+    python proto3_read.py serialized/better_addressbook
+```
+
+```bash
+    python better_read.py serialized/proto3_addressbook
+```
+
 
 ## Pros and cons of protobuf over standard JSON
 > **_NOTE:_**  Not comprehensive but what I learned while reading about and experimenting with protobuf on my own.
