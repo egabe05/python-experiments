@@ -3,7 +3,6 @@ from protobuf3 import addressbook_pb2
 def PromptForAddress(person):
     person.id = int(input("Enter person ID number: "))
     person.name = input("Enter name: ")
-    person.dont_exist = "blah"
 
     email = input("Enter email address (blank for none): ")
     if email:

@@ -1,18 +1,18 @@
-from protobuf3 import addressbook3_pb2
+from protobuf3 import addressbook_pb2
 
 def ListPeople(address_book):
     for person in address_book.people:
         print("Person ID: ", person.id)
         print("Name: ", person.name)
-        if person.HasField("email"):
+        if person.email:
             print("Email address: ", person.email)
 
         for phone_number in person.phones:
-            if phone_number.type == addressbook3_pb2.Person.PhoneType.MOBILE:
+            if phone_number.type == addressbook_pb2.Person.PhoneType.MOBILE:
                 print("  Mobile phone #:", end=" ")
-            elif phone_number.type == addressbook3_pb2.Person.PhoneType.HOME:
+            elif phone_number.type == addressbook_pb2.Person.PhoneType.HOME:
                 print("  Home phone #:", end=" ")
-            elif phone_number.type == addressbook3_pb2.Person.PhoneType.WORK:
+            elif phone_number.type == addressbook_pb2.Person.PhoneType.WORK:
                 print("  Work phone #:", end=" ")
             print(phone_number.number)
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print(f'Usage: {sys.argv[0]} "ADDRESS_BOOK_FILE"')
         sys.exit(-1)
     
-    address_book = addressbook3_pb2.AddressBook()
+    address_book = addressbook_pb2.AddressBook()
 
     with open(sys.argv[1], "rb") as f:
         address_book.ParseFromString(f.read())
