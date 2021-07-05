@@ -1,4 +1,4 @@
-from better.types.tutorial import AddressBook, PersonPhoneType
+from better.tutorial import AddressBook, PersonPhoneType
 
 def ListPeople(address_book: AddressBook):
     for person in address_book.people:

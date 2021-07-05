@@ -1,4 +1,4 @@
-from better.types.tutorial import AddressBook, Person, PersonPhoneNumber, PersonPhoneType
+from better.tutorial import AddressBook, Person, PersonPhoneNumber, PersonPhoneType
 
 def PromptForAddress(address_book: AddressBook):
     person = Person()
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     try:
         with open(sys.argv[1], "rb") as f:
-            address_book.ParseFromString(f.read())
+            address_book.parse(f.read())
     except IOError:
         print(f"{sys.argv[1]}: Could not open file. Creating a new one")
 

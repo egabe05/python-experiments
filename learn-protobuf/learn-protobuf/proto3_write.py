@@ -1,8 +1,9 @@
-from protobuf3 import addressbook3_pb2
+from protobuf3 import addressbook_pb2
 
 def PromptForAddress(person):
     person.id = int(input("Enter person ID number: "))
     person.name = input("Enter name: ")
+    person.dont_exist = "blah"
 
     email = input("Enter email address (blank for none): ")
     if email:
@@ -18,11 +19,11 @@ def PromptForAddress(person):
 
         phone_type_input = input("Is this a mobile, home, or work phone? ")
         if phone_type_input == "mobile":
-            phone.type = addressbook3_pb2.Person.PhoneType.MOBILE
+            phone.type = addressbook_pb2.Person.PhoneType.MOBILE
         elif phone_type_input == "home":
-            phone.type = addressbook3_pb2.Person.PhoneType.HOME
+            phone.type = addressbook_pb2.Person.PhoneType.HOME
         elif phone_type_input == "work":
-            phone.type = addressbook3_pb2.Person.PhoneType.WORK
+            phone.type = addressbook_pb2.Person.PhoneType.WORK
         else:
             print("Unknown phone type; leaving as default value.")
 
@@ -33,7 +34,7 @@ if __name__ == "__main__":
         print(f'Usage: {sys.argv[0]} "ADDRESS_BOOK_FILE"')
         sys.exit(-1)
 
-    address_book = addressbook3_pb2.AddressBook()
+    address_book = addressbook_pb2.AddressBook()
 
     try:
         with open(sys.argv[1], "rb") as f:
